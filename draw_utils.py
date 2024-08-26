@@ -25,7 +25,7 @@ class Place:
 class Drawer:
     def __init__(self):
         self.table_x = 0
-        self.table_y = 0
+        self.table_y = gap
         self.svg_items = []
     
     def reserve_left(self, x: int):
@@ -37,9 +37,11 @@ class Drawer:
 
     def draw_place(self, place):
         bg = draw.Rectangle(self.table_x, self.table_y, sum_block_w, small_block_h, fill=violet, rx=10, ry=10)
-        text = draw.Text(f"{place.name} {place.abbrv}", 50, self.table_x+30, self.table_y+70)
+        abbrv = draw.Text(place.abbrv, 80, self.table_x+30, self.table_y+80)
+        name = draw.Text(place.name, 40, self.table_x+270, self.table_y+50)
+        address = draw.Text(place.address, 30, self.table_x+270, self.table_y+80)
         self.table_y += small_block_h + gap
-        self.svg_items.extend([bg, text])
+        self.svg_items.extend([bg, abbrv, name, address])
     
     def draw_time(self, time, place):
         block_x = self.table_x + small_block_w + gap
@@ -71,7 +73,7 @@ class Drawer:
 
 
     def generate(self, png=False):
-        self.table_y -= gap
+        self.table_x += gap
         drawing = draw.Drawing(self.table_x + sum_block_w, self.table_y, fill='white', font_family='Magnetik', font_weight='bold')
         drawing.append(draw.Rectangle(0, 0, self.table_x + sum_block_w, self.table_y))
         for drawn_item in self.svg_items:

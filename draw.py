@@ -20,11 +20,13 @@ drawer.reserve_left(300)
 for place in data["places"]:
     places.append(Place(place["name"], place["address"], place["abbrv"]))
 
-for place in places:
-    drawer.draw_place(place)
+
 
 for day, lessons in days.items():
     drawer.draw_day(day, lessons)
+
+for place in places:
+    drawer.draw_place(place)
 
 drawer.draw_title("APE KRAKÓW", 300)
 

@@ -1,0 +1,46 @@
+places:
+  - name: Pracownia Młodych
+    address: Krakusa 7
+    abbrv: PM
+  - name: Miejsce Aktywności Mieszkańców
+    address: Na Kozłówku 25
+    abbrv: MAM
+
+lessons:
+  - place: mam
+    day: czwartek
+    title: |
+          programowanie
+          w pythonie
+    time: "18:00"
+  - place: mam
+    day: piątek
+    title: |
+          pogotowie
+          matematyczne
+    time: "19:00"
+  - place: mam
+    day: piątek
+    title: |
+          konwersacje niemieckie 
+          nieco zaawansowane
+    time: "20:00"
+  - place: mam
+    day: sobota
+    time: "19:00"
+    title: |
+          kurs maturalny
+          z matematyki
+  - place: mam
+    day: niedziela
+    time: "19:00"
+    title: | 
+          niemiecki
+          dla początkujących
+  - place: pm
+    day: piątek
+    time: "14:00"
+    title: |
+          kurs maturalny
+          z filozofii
+  
